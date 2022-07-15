@@ -43,13 +43,6 @@ module.exports = {
       "classes": true,
       "variables": true,
       "allowNamedExports": false,
-    },],
-    "comma-dangle": ["error", {
-      "arrays": "always",
-      "objects": "always",
-      "imports": "never",
-      "exports": "never",
-      "functions": "never",
-    },],
+    },]
   },
 };
