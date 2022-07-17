@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import type { Pokemon, PokemonResponse } from "../interfaces/pokemon";
+import type { Pokemon, PokemonResponse } from "@/interfaces/pokemon";
 
 export const usePokemonFromApi = () => {
   const [pokemon, setPokemon] = useState<Pokemon[]>();

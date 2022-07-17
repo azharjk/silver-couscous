@@ -7,7 +7,7 @@ module.exports = {
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,30 +19,37 @@ module.exports = {
   },
   "plugins": [
     "react",
-    "@typescript-eslint",
+    "@typescript-eslint"
   ],
   "rules": {
     "indent": [
       "error",
-      2,
+      2
     ],
     "linebreak-style": [
       "error",
-      "unix",
+      "unix"
     ],
     "quotes": [
       "error",
-      "double",
+      "double"
     ],
     "semi": [
       "error",
-      "always",
+      "always"
     ],
     "no-use-before-define": ["error", {
       "functions": true,
       "classes": true,
       "variables": true,
       "allowNamedExports": false,
-    },]
+    }],
+    "comma-dangle": ["error", {
+      "arrays": "never",
+      "objects": "always-multiline",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never",
+    }],
   },
 };

@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   StyleSheet,
   Text,
-  View,
+  View
 } from "react-native";
 
 import type { Pokemon } from "./interfaces/pokemon";
@@ -34,16 +34,16 @@ const styles = StyleSheet.create({
   },
 });
 
-const renderPokemonItem: ListRenderItem<Pokemon> = ({ item }) => {
-  return (
-    <Text>
-      {item.name} {item.url}
-    </Text>
-  );
-};
-
 export default function App() {
   const pokemon = usePokemonFromApi();
+
+  const renderPokemonItem: ListRenderItem<Pokemon> = ({ item }) => {
+    return (
+      <Text>
+        {item.name} {item.url}
+      </Text>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
