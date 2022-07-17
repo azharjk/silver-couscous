@@ -17,8 +17,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
   },
-  header: {
+  appContainer: {
     padding: 20,
+    // FIXME: Harcoded bottom padding because safe area view does not
+    //        handle the limit to bottom
+    paddingBottom: 70,
   },
   header__title: {
     fontSize: 18,
@@ -32,24 +35,30 @@ const styles = StyleSheet.create({
   pokemon: {
     marginTop: 20,
   },
+  pokemon__item: {
+    padding: 20,
+    paddingLeft: 4,
+    fontSize: 16,
+    textTransform: "capitalize",
+    borderWidth: 1,
+    borderColor: "#808080",
+  },
 });
 
 export default function App() {
   const pokemon = usePokemonFromApi();
 
   const renderPokemonItem: ListRenderItem<Pokemon> = ({ item }) => {
-    return (
-      <Text>
-        {item.name} {item.url}
-      </Text>
-    );
+    return <Text style={styles.pokemon__item}>{item.name}</Text>;
   };
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
-      <View style={styles.header}>
-        <Text style={styles.header__title}>Silver Couscous</Text>
-        <Text style={styles.header__desc}>Pokemon App using PokeAPI</Text>
+      <View style={styles.appContainer}>
+        <View>
+          <Text style={styles.header__title}>Silver Couscous</Text>
+          <Text style={styles.header__desc}>Pokemon App using PokeAPI</Text>
+        </View>
         <FlatList
           style={styles.pokemon}
           data={pokemon}
