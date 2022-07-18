@@ -52,15 +52,15 @@ type HomeScreenProps = NativeStackScreenProps<RootStackParamList, "Home">;
 export default function HomeScreen({ navigation }: HomeScreenProps) {
   const pokemon = usePokemonFromApi();
 
-  const handlePokemonItemPress = () => {
+  const handlePokemonItemPress = (pokemonUrl: string) => {
     const navigateTo = "PokemonDetail";
-    console.log("[DEBUG(HomeScreen)]: navigate to =>", navigateTo);
-    navigation.navigate(navigateTo);
+    console.log("[DEBUG(HomeScreen)]: navigateTo =>", navigateTo, ", pokemonUrl =>", pokemonUrl);
+    navigation.navigate(navigateTo, { pokemonUrl });
   };
 
   const renderPokemonItem: ListRenderItem<Pokemon> = ({ item }) => {
     return (
-      <Text onPress={handlePokemonItemPress} style={styles.pokemon__item}>
+      <Text onPress={() => handlePokemonItemPress(item.url)} style={styles.pokemon__item}>
         {item.name}
       </Text>
     );
