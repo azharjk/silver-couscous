@@ -17,7 +17,6 @@ import { RootStackParamList } from "./RootStackParamList";
 const styles = StyleSheet.create({
   safeAreaContainer: {
     flex: 1,
-    backgroundColor: "#fff",
   },
   appContainer: {
     padding: 20,
